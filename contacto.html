@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="https://kit.fontawesome.com/d1be60c6dc.js" crossorigin="anonymous"></script>
+    <title>BEER Pub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <img class="logo" src="imagen/beer.jpg" alt="beer">
+        <nav>
+            <ul class="topnav">
+                <li><a  href="index.html">Inicio</a></li>
+                <li><a  href="about.html">Acerca de</a></li>
+                <li><a  href="menu.html">Menu</a></li>
+                <li><a  href="sucursales.html">Sucursales</a></li>
+                <li><a  href="contacto.html">Contacto</a></li>
+                <li class="cuadradito"></li>
+            </ul>
+        </nav>
+    </header>   
+    <main>
+        <div class="separacion"></div>
+        <div class="vista">
+            <h2>Contacto</h2>
+        </div>
+        <div class="container">
+            <div class="contacto-space"></div>
+            <div class="contacto-form">
+                <form action="show_data.html"target="_blank">
+                    <h3>Complete sus datos</h3>
+                    <div class="row">
+                        <div class="col-25"> 
+                            <label  for="name">Nombres </label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" name="Nombre" id="name" placeholder="Ingresa su nombre aqui..." required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label  for="lastname">Apellido</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" name="Apellido"id="lastname"placeholder="Ingresa su apellido aqui..." required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="tel">Telefono </label>
+                        </div>
+                        <div class="col-75">
+                            <input type="tel" name="telefono" id="tel" placeholder="ingrese su telefono aqui ....">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label class="is-required" for="mail">Email</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="email" name="Email" id="mail"placeholder="Ingresa su email aqui" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for ="comenta">Comentarios:</label>
+                        </div> 
+                        <div class="col-75">
+                            <textarea name="comentarios" id="comenta" placeholder="Escribe tu comentario.."style="height:200px">
+                            </textarea>
+                        </div>
+                    </div>
+                    <p id="requerido">* Campos Obligatorios</p>
+                    <br><br>
+                    <div class="row">
+                        <input type="submit" value="Enviar"id="boton">
+                        <input type="reset" value="Borrar Datos" id="boton">
+                    </div>
+                </form>
+        </div>
+        <div class="contacto-space"></div>
+    </main>
+    <div class="separacion"></div>
+               
+    <footer>
+        <div class="grid-container">
+            <div>
+                <h5>Links</h5>
+                <ul >
+                    <li><a class="link2" href="index.html">Inicio</a></li>
+                    <li><a class="link2" href="about.html">Acerca de</a></li>
+                    <li><a class="link2" href="menu.html">Menú</a></li>
+                    <li><a class="link2" href="sucursales.html">Sucursales</a></li>
+                    <li><a class="link2" href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div >
+                <h5>Información de Contacto</h5>
+                <address>
+                    Francisco Beiro 3500<br>
+                    BUENOS AIRES<br>
+                    <i class="fa fa-phone fa-lg"></i> 47515698<br>
+                    <i class="fa-brands fa-whatsapp fa-lg"></i>1145896378<br>
+                    <i class="fa fa-envelope fa-lg"></i> <a
+                        href="mailto:beer.pub@gmail.com">beer.pub@gmail.com</a>
+                </address>
+            </div>
+            <div>
+                <a class="redsoc" href="https://www.twitter.com" target="_blank"><i class="fa-brands fa-twitter" aria-hidden="true"></i></a>
+                <a class="redsoc" href="http://www.facebook.com" target="_blank"> <i class="fa-brands fa-facebook"aria-hidden="true"></i></a>
+                <a class="redsoc" href="http://www.instagram" target="_blank"><i class="fa-brands fa-instagram"aria-hidden="true"></i></a>
+                <a class="redsoc" href="http://www.linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"aria-hidden="true"></i></a>
+            </div>
+        </div>
+            
+        <p class="parrafo" >Copyright © 2022</p>
+        
+    </footer>
+    
+</body>
+</html>
