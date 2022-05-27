@@ -1,41 +1,376 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    
     <script src="https://kit.fontawesome.com/d1be60c6dc.js" crossorigin="anonymous"></script>
     <title>BEER Pub</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="imagen/pub1.png">
 </head>
+
 <body>
-    <header class="header">
-        <img class="logo" src="imagen/beer.jpg" alt="beer">
-        <nav>
-            <ul class="topnav">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="about.html">Acerca de</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="sucursales.html">Sucursales</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-                <li class="right"><a href="#" style="color: #bfcad0;">
-                    <span class="fa fa-sign-in">Login</span></a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+    <nav class="navbar navbar-expand-sm navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img class="logo" src="imagen/beer.png" alt="beer">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item ">
+                        <a class="nav-link" href="index.html"> Inicio </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="eventos.html"> Eventos </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="menu.html">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sucursales.html">Sucursales</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                </ul>
+                <div class="navbar-nav ms-auto">
+                    <a href="#login_modal" class="nav-item nav-link" data-bs-toggle="modal"
+                        data-bs-target="#login_modal">
+                        <span class="fa fa-sign-in"></span> Login
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-    <main >
-            <img src="imagen/bannerPub2.png" class="img-fluid" alt="banner" >
+    <!-- The Modal-->
+    <div class="modal" id="login_modal">
+        <div class="modal-dialog modal-fullscreen-sm-down">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header titulo-oscuro">
+                    <h4 class="modal-title">Iniciar Sesion</h4>
+                    <button type="button" class="btn-close close border border-warning "
+                        data-bs-dismiss="modal"></button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body body-claro ">
+                    <form class="was-validated ">
+                        <div class="mb-3 mt-3">
+                            <label for="uname" class="form-label">Usuario:</label>
+                            <input type="text" class="form-control " id="uname" placeholder="Ingrese su usuario..."
+                                name="uname" required>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Por favor rellenar este campo</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="pwd" class="form-label">Contraseña:</label>
+                            <input type="password" class="form-control" id="pwd" placeholder="Ingrese su contraseña..."
+                                name="pswd" required>
+                            <div class="valid-feedback">Validado</div>
+                            <div class="invalid-feedback">Por favor rellenar este campo</div>
+                        </div>
+                        <div class="form-check mb-3">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" name="remember"> Remember me
+                            </label>
+                        </div>
+                        <button type="button" class="btn btn-danger btn-sm ml-auto"
+                            data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-success btn-sm ml-1">Iniciar</button>
+                        <div>
+                            <button type="button" class="toggle btn-warning" data-bs-toggle="modal"
+                                data-bs-target="#crear_cuenta">Crear Cuenta</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="crear_cuenta">
+        <div class="modal-dialog modal-fullscreen-sm-down">
+            <div class="modal-content">
+                <div class="modal-header titulo-oscuro">
+                    <h4 class="modal-title">Crear Cuenta</h4>
+                    <button type="button" class="btn-close close border border-warning "
+                        data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body body-claro ">
+                    <form action="#">
+                        <div>
+                            <label for="uname" class="form-label">Usuario:</label>
+                            <input type="text" class="form-control " id="uname" placeholder="Ingrese su usuario..."
+                                name="uname" required>
+                        </div>
+                        <div>
+                            <label for="pwd" class="form-label">Contraseña:</label>
+                            <input type="password" class="form-control" id="pwd" placeholder="Ingrese su contraseña..."
+                                name="pswd" required>
+                        </div>
+                        <div>
+                            <label for="email" class="form-label">Correo Electronico:</label>
+                            <input type="email" class="form-control" id="email" placeholder="Correo Electronico"
+                                name="email" required>
+                        </div>
+                        <div>
+                            <label for="tel" class="form-label">Telefono:</label>
+                            <input type="tel" class="form-control" id="tel" placeholder="Teléfono" name="telefono">
+                        </div>
+
+                        <input type="submit" value="Registrarse">
+                        <p class="warnings"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--FORMULARIO PARA RESERVAR MESA-->
+    <div id="reserveModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg" role="content">
+            <div class="modal-content">
+                <div class="modal-header titulo-oscuro">
+                    <h4 class="modal-title">Reserve una Mesa</h4>
+                    <button type="button" class="btn-close close border border-warning"
+                        data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body body-claro">
+                    <form>
+                        <div style="margin-bottom: 20px;">
+                            <div class="row">
+                                <legend class="col-form-label col-sm-4 pt-0 my-2" style="text-align:left">Numero de Comensales</legend>
+                                <div class=" col-sm-8" style="text-align:left">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input primary" type="radio" name="inlineRadioOptions"
+                                            id="inlineRadio1" value="option1">
+                                        <label class="form-check-label" for="inlineRadio1">1</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                            id="inlineRadio2" value="option2">
+                                        <label class="form-check-label" for="inlineRadio2">2</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                            id="inlineRadio3" value="option3">
+                                        <label class="form-check-label" for="inlineRadio3">3</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                            id="inlineRadio4" value="option4">
+                                        <label class="form-check-label" for="inlineRadio4">4</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                            id="inlineRadio5" value="option5">
+                                        <label class="form-check-label" for="inlineRadio5">5</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                            id="inlineRadio6" value="option6">
+                                        <label class="form-check-label" for="inlineRadio6">6</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 20px;">
+                            <div class="row">
+                                <legend class="col-form-label col-sm-4 pt-0 my-2" style="text-align:left">Seccion</legend>
+                                <div class="col-sm-8" style="text-align:left">
+                                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                        <label class="btn btn-success btn-sm ml-auto my-2 active">
+                                            <input type="radio" name="options" id="option1" autocomplete="off"
+                                                checked>No Fumador
+                                        </label>
+                                        <label class="btn btn-danger btn-sm  my-2">
+                                            <input type="radio" name="options" id="option2" autocomplete="off">
+                                            Fumador
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 20px;">
+                            <div class="mb-3 row">
+                                <label for="inputTime" class="col-sm-4 col-form-label pt-0 my-2" style="text-align:left">Dia y Hora:</label>
+                                <div class="col-sm-3">
+                                    <input type="date" class="form-control" id="date" placeholder="Dia">
+                                </div>
+                                <div class="col-sm-3">
+                                    <input type="time" class="form-control" id="time" placeholder="Hora">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-warning">Reservar</button>
+                            <div></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <div class="banner">
+            <img src="imagen/bannerPub2.png" class="img-fluid" alt="banner">
+            <div class="texto-encima">
+                <div class="centrado">
+                    <a href="#reserveModal" class="btn btn-warning btn-sm btn-block mesa" data-bs-toggle="modal"
+                        data-bs-target="#reserveModal">Reservar Mesa
+
+                    </a>
+                    <!-- <button type="button" class="btn btn-warning btn-sm btn-block mesa" data-bs-toggle="modal" data-bs-target="#reserveModal">Reserve Mesa</button>
+                    <a role="button" class="btn btn-warning btn-sm btn-block mesa " name="btn_reserve" id="reserveModal" 
+                        href="#reserveModal">Reserve Mesa
+                    </a>-->
+                </div>
+            </div>
+        </div>
     </main>
-
+    <!-- Carousel -->
+    <div class="container max-height d-flex align-items-center">
+        <div class="row row-content">
+            <div class="col">
+                <div id="demo" class="carousel slide" data-bs-ride="carousel">
+                    <!-- Indicators/dots -->
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active" aria-current="true" aria-label="slide 1"></button>
+                        <button type="button" data-bs-target="#demo" data-bs-slide-to="1" aria-label="slide 2"></button>
+                        <button type="button" data-bs-target="#demo" data-bs-slide-to="2" aria-label="slide 3"></button>
+                        <button type="button" data-bs-target="#demo" data-bs-slide-to="3" aria-label="slide 4"></button>
+                    </div>
+                    <!-- The slideshow/carousel -->
+                    <div class="carousel-inner"role="listbox">
+                        <div class="carousel-item active"  data-bs-interval="5000">
+                            <img src="imagen/combo3.jpg" alt="Los Angeles" class="d-block img-fluid">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h1 class="combo ">Combo 1 </h1>
+                                <h3><span class="ml-2 badge bg-danger"style="margin-left:200px ;">HOT</span>
+                                    <span class="ml-2 badge rounded-pill bg-warning text-dark">$599</span></h3>
+                                <p class="d-none d-sm-block ml-3 carousel-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, architecto aperiam velit dolores placeat dolorum minus voluptate voluptatum id quos sunt!
+                            </div>
+                        </div>
+                        <div class="carousel-item" data-bs-interval="5000">
+                            <img src="imagen/combo2.jpg" alt="Chicago" class="d-block img-fluid">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h1 class="combo ">Combo 2 </h1>
+                                <h3><span class="ml-2 badge bg-danger"style="margin-left:200px ;">HOT</span>
+                                    <span class="ml-2 badge rounded-pill bg-warning text-dark">$699</span></h3>
+                                <p class="d-none d-sm-block ml-3 carousel-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, architecto aperiam velit dolores placeat dolorum minus voluptate voluptatum id quos sunt!
+                            </div> 
+                        </div>
+                        <div class="carousel-item" data-bs-interval="5000">
+                            <img src="imagen/combo4.jpg" alt="New York" class="d-block img-fluid">
+                            <div class="carousel-caption d-none d-md-block ">
+                                <h1 class="combo ">Combo 3 </h1>
+                                <h3><span class="ml-2 badge bg-danger" style="margin-left:200px ;">HOT</span>
+                                    <span class="ml-2 badge rounded-pill bg-warning text-dark">$499</span></h3>
+                                <p class="d-none d-sm-block ml-3 carousel-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, architecto aperiam velit dolores placeat dolorum minus voluptate voluptatum id quos sunt!
+                            </div> 
+                        </div>
+                        <div class="carousel-item" data-bs-interval="5000">
+                            <img src="imagen/combo5.jpg" alt="New York" class="d-block img-fluid">
+                            <div class="carousel-caption d-none d-md-block ">
+                                <h1 class="combo">Combo 4 </h1>
+                                <h3><span class="ml-2 badge bg-danger" style="margin-left:200px ;">HOT</span>
+                                    <span class="ml-2 badge rounded-pill bg-warning text-dark">$559</span></h3>
+                                <p class="d-none d-sm-block ml-3 carousel-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, architecto aperiam velit dolores placeat dolorum minus voluptate voluptatum id quos sunt!
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Left and right controls/icons -->
+                    <button class="carousel-control-prev " type="button" data-bs-target="#demo" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon " aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                      </button>
+                      
+                    <button class="btn btn-danger btn-sm" id="carouselButton">
+                        <span id="carousel-button-icon" class="fa fa-pause"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="separacion"></div>
+            <div>
+                <h3 class="promos">PROMOS DEL MES</h3>
+            </div>
+            <div class=" container-promos">
+                <div class="col-12 col-sm-4 order-sm-last col-md-3">
+                </div>
+                <div class="col col-sm order-sm-first col-md ">
+                        <img class="d-flex ml-3 img-thumbnail align-self-center imagen-promos" src="imagen/combo3.jpg" alt="combo">
+                </div>
+                <div class="media-body ms-3 promos-margen">
+                    <h2 class="mt-0 ml-3 promos-h2">Combo 1 <span class="ml-2 badge bg-danger">HOT</span><span
+                        class="ml-2 badge-pill badge bg-warning text-dark">$599</span></h2>
+                        <p class="promos-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita recusandae provident similique
+                        </p>
+                </div>
+            </div>
+            <div class="container-promos">
+                <div class="col-12 col-sm-4 order-sm-last col-md-3">
+                </div>
+                <div class="col col-sm order-sm-first col-md ">
+                        <img class="d-flex ml-3 img-thumbnail align-self-center imagen-promos" src="imagen/combo2.jpg" alt="combo">
+                </div>
+                <div class="media-body ms-3 carousel">
+                    <h2 class="mt-0 ml-3 promos-h2">Combo 2 <span class="ml-2 badge bg-danger">HOT</span><span
+                        class="ml-2 badge-pill badge bg-warning text-dark">$699</span></h2>
+                        <p class="promos-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita recusandae provident similique
+                        </p>
+                </div>
+            </div>
+            
+            <div class="container-promos">
+                <div class="col-12 col-sm-4 order-sm-last col-md-3">
+                </div>
+                <div class="col col-sm order-sm-first col-md ">
+                    <img class="d-flex ml-3 img-thumbnail align-self-center imagen-promos" src="imagen/combo4.jpg" alt="combo">
+                </div>
+                <div class="media-body ms-3 promos-margen">
+                    <h2 class="mt-0 ml-3 promos-h2">Combo 3 <span class="ml-2 badge bg-danger">HOT</span><span
+                        class="ml-2 badge-pill badge bg-warning text-dark">$499</span></h2>
+                        <p class="promos-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita recusandae provident similique
+                        </p>
+                </div>
+            </div>
+            <div class="container-promos">
+                <div  class="col-12 col-sm-4 order-sm-last col-md-3">
+                    
+                </div>
+                <div class="col col-sm order-sm-first col-md ">
+                        <img class="d-flex ml-3 img-thumbnail align-self-center imagen-promos" src="imagen/combo5.jpg" alt="combo">
+                </div>
+                <div class="media-body ms-3 carousel">
+                    <h2 class="mt-0 ml-3 promos-h2">Combo 4 <span class="ml-2 badge bg-danger">HOT</span><span
+                        class="ml-2 badge-pill badge bg-warning text-dark">$559</span></h2>
+                        <p class=" promos-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita recusandae provident similique
+                        </p>
+                </div>
+            </div>
+        </div>
+    </div>
+  
     <div class="separacion"></div>
     <footer>
         <div class="grid-container">
             <div>
                 <h5>Links</h5>
-                <ul >
+                <ul>
                     <li><a class="link2" href="index.html">Inicio</a></li>
                     <li><a class="link2" href="about.html">Acerca de</a></li>
                     <li><a class="link2" href="menu.html">Menú</a></li>
@@ -50,20 +385,26 @@
                     BUENOS AIRES<br>
                     <i class="fa fa-phone fa-lg"></i> 47515698<br>
                     <i class="fa-brands fa-whatsapp fa-lg"></i>1145896378<br>
-                    <i class="fa fa-envelope fa-lg"></i> <a
-                        href="mailto:beer.pub@gmail.com">beer.pub@gmail.com</a>
+                    <i class="fa fa-envelope fa-lg"></i> <a href="mailto:beer.pub@gmail.com">beer.pub@gmail.com</a>
                 </address>
             </div>
             <div>
-                <a class="redsoc" href="https://www.twitter.com" target="_blank"><i class="fa-brands fa-twitter" aria-hidden="true"></i></a>
-                <a class="redsoc" href="http://www.facebook.com" target="_blank"> <i class="fa-brands fa-facebook"aria-hidden="true"></i></a>
-                <a class="redsoc" href="http://www.instagram" target="_blank"><i class="fa-brands fa-instagram"aria-hidden="true"></i></a>
-                <a class="redsoc" href="http://www.linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"aria-hidden="true"></i></a>
+                <a class="redsoc" href="https://www.twitter.com" target="_blank"><i class="fa-brands fa-twitter"
+                        aria-hidden="true"></i></a>
+                <a class="redsoc" href="http://www.facebook.com" target="_blank"> <i class="fa-brands fa-facebook"
+                        aria-hidden="true"></i></a>
+                <a class="redsoc" href="http://www.instagram" target="_blank"><i class="fa-brands fa-instagram"
+                        aria-hidden="true"></i></a>
+                <a class="redsoc" href="http://www.linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"
+                        aria-hidden="true"></i></a>
             </div>
         </div>
         <p class="parrafo">© Copyright 2022</p>
     </footer>
-    
-    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!--   <script src="node_modules/@popperjs/core/dist/cjs/popper.js"></script>
+    <script src="node_modules/formulario.js"></script> -->
 </body>
+
 </html>

@@ -8,14 +8,15 @@
     <script src="https://kit.fontawesome.com/d1be60c6dc.js" crossorigin="anonymous"></script>
     <title>BEER Pub</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="imagen/pub1.png">
 </head>
 <body>
     <header class="header">
-        <img class="logo" src="imagen/beer.jpg" alt="beer">
+        <img class="logo" src="imagen/beer.png" alt="beer">
         <nav>
             <ul class="topnav">
                 <li><a  href="index.html">Inicio</a></li>
-                <li><a  href="about.html">Acerca de</a></li>
+                <li><a  href="eventos.html">Eventos</a></li>
                 <li><a  href="menu.html">Menu</a></li>
                 <li><a  href="sucursales.html">Sucursales</a></li>
                 <li><a  href="contacto.html">Contacto</a></li>
@@ -26,16 +27,17 @@
     <main>
         <div class="separacion"></div>
         <div class="vista">
-            <h2>Contacto</h2>
+            <h2>¡Contáctanos!</h2>
         </div>
         <div class="container">
             <div class="contacto-space"></div>
-            <div class="contacto-form">
-                <form action="show_data.html"target="_blank">
-                    <h3>Complete sus datos</h3>
+            <div class="contacto-form" id="contacto-form">
+                <h3>Complete sus datos</h3>
+                <p class="contacto-parrafo">Si tienes algun comentario o sugerencia ¡Escríbenos!</p>
+                <form action="#"target="_blank">
                     <div class="row">
                         <div class="col-25"> 
-                            <label  for="name">Nombres </label>
+                            <label class="is-required" for="name">Nombres </label>
                         </div>
                         <div class="col-75">
                             <input type="text" name="Nombre" id="name" placeholder="Ingresa su nombre aqui..." required>
@@ -43,7 +45,7 @@
                     </div>
                     <div class="row">
                         <div class="col-25">
-                            <label  for="lastname">Apellido</label>
+                            <label class="is-required" for="lastname">Apellido</label>
                         </div>
                         <div class="col-75">
                             <input type="text" name="Apellido"id="lastname"placeholder="Ingresa su apellido aqui..." required>
@@ -76,9 +78,12 @@
                     </div>
                     <p id="requerido">* Campos Obligatorios</p>
                     <br><br>
-                    <div class="row">
-                        <input type="submit" value="Enviar"id="boton">
-                        <input type="reset" value="Borrar Datos" id="boton">
+                    <div class="row ">
+                        <input type="reset" value="Borrar Datos"  id="boton">
+                        <input type="submit" value="Enviar"  id="boton">
+                    </div>
+                    <div>
+                        <p class="contacto__mensaje-exito" id="contacto__mensaje-exito">Formulario enviado exitosamente</p>
                     </div>
                 </form>
         </div>
